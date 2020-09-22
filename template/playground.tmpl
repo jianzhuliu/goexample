@@ -1,0 +1,50 @@
+{{define "playground"}}
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			playground
+		</title>
+		<link rel="stylesheet" href="/static/css/jquery.linedtextarea.css">
+		<link rel="stylesheet" href="/static/css/playground.css">
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery.linedtextarea.js"></script>
+		<script src="/static/js/playground.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#code').linedtextarea();
+				$('#code').attr('wrap', 'off');
+
+				$("#run").click(run);
+				$("#fmt").click(fmt);
+				$("#imports").click(imports);
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Run" id="embedRun">
+		<div id="banner">
+			<div id="head">
+				The Go Playground
+			</div>
+			<input type="button" value="运行" id="run">
+			<input type="button" value="格式化" id="fmt">
+			<input type="button" value="自动导入" id="imports">
+		</div>
+		<div id="wrap">
+			<textarea id="code" name="code" autocorrect="off" autocomplete="off" autocapitalize="off"
+			spellcheck="false" wrap="off">{{.}}</textarea>
+		</div>
+		<div id="output">
+		</div>
+		<footer>
+			<a href="javascript:void(0);" target="_blank">
+				go playground
+			</a>
+		</footer>
+	</body>
+
+</html>
+
+{{end}}

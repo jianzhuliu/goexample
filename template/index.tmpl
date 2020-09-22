@@ -7,6 +7,7 @@
 <style>
 * { margin: 0; padding: 0;}
 .wrap { width: 960px; margin: 0 auto; font: 14px Tahoma,Helvetica,Arial,"宋体";}
+p { margin: 14px 0; text-align: center;}
 h2 { margin-bottom: 20px; padding: 5px 2px; border-bottom: 1px solid #ccc; font: 500 24px "Microsoft Yahei";}
 ul { margin-top: 20px; list-style-type: none; overflow: hidden; zoom: 1;}
 li { position: relative; float: left; width: 300px; margin: 0 10px 20px;}
@@ -19,11 +20,12 @@ ul a { float: left; width: 300px; height: 60px; line-height: 60px; color: #333; 
 <h1 style="margin: 40px; font: 32px Microsoft Yahei; text-align: center;">goexample</h1>
 
 <div class="wrap">
+	<p><a href="/playground" target="_blank">playground</a></p>
 	{{ range $k, $dir := .DemoItems }}
 		<h2>{{$dir.Name}}</h2>
 		<ul>
 		{{ range $dir.Items}}
-			<li><a href="demo/{{$dir.Name}}/{{.Name}}" target="_blank">{{.Name}}</a></li>
+			<li><a href="/demo/{{$dir.Name}}/{{.Name}}" target="_blank">{{.Name}}</a></li>
 		{{end}}
 		</ul>
 	{{end}}
