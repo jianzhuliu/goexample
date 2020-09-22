@@ -108,7 +108,6 @@ func handleRun(rw http.ResponseWriter, r *http.Request){
 	
 	//目标文件
 	file := filepath.Join(tempDir, "prog.go")
-	fmt.Println("run -- file -- ",file)
 	
 	//写入客户端上报内容
 	err = ioutil.WriteFile(file,[]byte(body), perm)
@@ -171,7 +170,6 @@ func handleFmt(rw http.ResponseWriter, r *http.Request){
 	
 	//目标文件
 	file := filepath.Join(tempDir, "prog.go")
-	fmt.Println("fmt -- file -- ",file)
 	
 	//写入客户端上报内容
 	err = ioutil.WriteFile(file,[]byte(body), perm)
