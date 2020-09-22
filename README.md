@@ -2,7 +2,7 @@
 
 自学 go 过程中，部分代码备份git仓库
 
-1、go get -v github.com/jianzhuliu/goexample
+1、go get -v github.com/jianzhuliu/goexample  or  go get -v gitee.com/jianzhuliu/goexample
 
 2、cd goexample
 
