@@ -48,11 +48,11 @@ func handlePlayground(rw http.ResponseWriter, r *http.Request){
 
 //可以选择的控制字段有三种：
 // `json:"-"`  			-：不要解析这个字段
-// `json:,emitempty`	omitempty：当字段为空（默认值）时，不要解析这个字段。
+// `json:",omitempty"`	omitempty：当字段为空（默认值）时，不要解析这个字段。
 // `json:"sname"`  		FieldName：当解析 json 的时候，使用这个名字
 type PlaygroundData struct{
-	Error string `json:,emitempty`
-	Body string	`json:,emitempty`
+	Error string `json:",omitempty"`
+	Body string	`json:",omitempty"`
 }
 
 //json 返回数据
