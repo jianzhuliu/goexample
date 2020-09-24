@@ -2,31 +2,38 @@ package main
 
 import (
 	"fmt"
-	"testing"
 	"strings"
+	"testing"
 )
 
-var x []byte = []byte{1023:'x'}
-var y []byte = []byte{1023:'y'}
-var s string 
+var x []byte = []byte{1023: 'x'}
+var y []byte = []byte{1023: 'y'}
+var s string
 
 func fc() {
 	s = (" " + string(x) + string(y))[1:]
 }
 
-func fd(){
+func fd() {
 	s = string(x) + string(y)
 }
 
-func fe(){
+func fe() {
 	t := strings.Builder{}
 	t.Write(x)
 	t.Write(y)
 	s = t.String()
 }
 
-func main(){
-	fmt.Println("fc:",testing.AllocsPerRun(1, fc))
-	fmt.Println("fe:",testing.AllocsPerRun(1, fe))
-	fmt.Println("fd:",testing.AllocsPerRun(1, fd))
+func main() {
+	fmt.Println("fc:", testing.AllocsPerRun(1, fc))
+	fmt.Println("fe:", testing.AllocsPerRun(1, fe))
+	fmt.Println("fd:", testing.AllocsPerRun(1, fd))
 }
+
+/*
+Output:
+fc:1
+fe:2
+fd:3
+*/
