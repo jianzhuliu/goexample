@@ -8,7 +8,7 @@ package main
 import "fmt"
 import "math"
 
-func func1(){
+func func1() {
 	fmt.Println()
 	var a = math.Sqrt(-1.0)
 	fmt.Println(a)      // NaN
@@ -42,6 +42,6 @@ func main() {
 	// the above loop outputs:
 	// NaN 123
 	// NaN 789
-	
+
 	func1()
 }
